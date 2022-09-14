@@ -38,3 +38,6 @@ MVC - Model, View, Controller
 
 Here's how to create a new controller form the Command line:
 `rails generate controller [name_of_controller]` 
+
+More info on each folder and file in a Rails application:
+https://guides.rubyonrails.org/getting_started.html > see section 3.2
