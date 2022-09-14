@@ -1,5 +1,7 @@
+require_relative '../crud'
+
 class Student
-  
+  include Crud
   attr_accessor :first_name, :last_name, :email, :username, :password
   
   def initialize(firstname, lastname, username, email, password)
@@ -27,8 +29,9 @@ end
 
 max = Student.new("Max", "Van Bel", "mdvb1", "max.vanbel@example.com", "password11")
 john = Student.new("John", "Doe", "jd1011", "johndoe@example.com", "password12")
-puts max
-puts john
-max.last_name = john.last_name
-puts "The max object was altered"
-puts max
+
+hashed_password = max.create_hash_digest(max.password)
+max.password = hashed_password
+puts max.password
+
+puts hashed_password
